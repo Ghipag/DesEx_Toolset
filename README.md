@@ -9,4 +9,4 @@ The toolset contains a template project, including a profile of stereotypes for 
 diagrams for executing design space explorations and MATLAB based interface for co-simulation in STK.
 
 ## Documentation
-Documentation reference may be found in the docs folder, in html format. Simply open these files with your browser to view the documentation
+Documentation reference may be found in the docs folder, in html format. Simply open these files with your browser to view the documentation.
