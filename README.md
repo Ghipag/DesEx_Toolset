@@ -7,3 +7,6 @@ and visualising design space data and STK provides orbital co-simulation.
 ## Components
 The toolset contains a template project, including a profile of stereotypes for parameter variability modelling, workflow 
 diagrams for executing design space explorations and MATLAB based interface for co-simulation in STK.
+
+## Documentation
+Documentation reference may be found in the docs folder, in html format. Simply open these files with your browser to view the documentation
