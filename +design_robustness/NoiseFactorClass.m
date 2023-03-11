@@ -3,21 +3,16 @@ classdef NoiseFactorClass
     % Noise Factor
     %
     % NoiseFactorClass Properties:
-    %    parameterfunction - function to be fitted to collection data of
-    %    system parameter
-    %    parameterplotfunction - function to be used to plot the aproxximated 
-    %    values of the system parameter
-    %    collectionmatrix - store of all collection point values
-    %    structureddata - restructured store of all collection point values
-    %    for generating surface functions and plots
-    %    approximatesurface - Approximated surface of the system parameter
-    %    approximatefunction - Approximated function of the system parameter
-    %    modelelementname - name of hte element of the model from which the
-    %    design values is generated
+    %    modelelementname - name of the element of the model from which the noise factor is generated
+    %    csmaddress - numeric vector representing the noise factors address in the model tree
+    %    mean value of the noise parameter
+    %    currentvalue - current value of the noise factor
+    %    CoV - coefficent of variance for the noisefactor
+    %    deltapercent - percantage offest used to calculate gradient
+    %    collectionvector - store of all collection point values
     %
     % NoiseFactorClass Methods:
     %    NoiseFactorClass - Constructor of NoiseFactorClass
-    %    restructurecollectionmatrix - restrucutres the collection matrix to make it suitable for generating surfaces functions and plots
     %    
    properties
         modelelementname {mustBeText} = "undefined" % modelelementname - name of the element of the model from which the noise factor is generated
@@ -31,12 +26,13 @@ classdef NoiseFactorClass
    end
    methods
        function obj = NoiseFactorClass(name,mean,cov,address)
-           %NoiseFactorClass is the constructor of the
-           %NoiseFactorClass object
+           % NoiseFactorClass is the constructor of the NoiseFactorClass object
            % Inputs:
-           %    name : name of the element of the model from which the design values is generated
-           %    dimensions : an array of the number of collection points to
-           %    be taken in each dimension
+           %    modelelementname : name of the element of the model from which the design values is generated
+           %    mean : Mean value of the noise factor
+           %    CoV : Covariance of the noise factor
+           %    csmaddress : address of the noise factor in the csm model
+           %    collectionvector : array of collected noise factor values
            % Outputs:
            %    obj : the NoiseFactorClass object
             if nargin == 4

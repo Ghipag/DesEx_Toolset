@@ -25,9 +25,10 @@
 var NAVTREE =
 [
   [ "DesEx_Toolset", "index.html", [
-    [ "DesEx Toolset", "md__des_ex__toolset__r_e_a_d_m_e.html", [
-      [ "MBSE Environment", "md__des_ex__toolset__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Components", "md__des_ex__toolset__r_e_a_d_m_e.html#autotoc_md2", null ]
+    [ "DesEx Toolset", "md__des_ex__toolset__des_ex__toolset__r_e_a_d_m_e.html", [
+      [ "MBSE Environment", "md__des_ex__toolset__des_ex__toolset__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "Components", "md__des_ex__toolset__des_ex__toolset__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "Documentation", "md__des_ex__toolset__des_ex__toolset__r_e_a_d_m_e.html#autotoc_md3", null ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
