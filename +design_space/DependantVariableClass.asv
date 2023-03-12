@@ -117,7 +117,7 @@ classdef DependantVariableClass
            %    constraintarray : array of constraint coefficients
            %    previousdatalist : Array of previous design space data
            % Outputs:
-           %    plots of the design space
+           %
            figure
            try obj.approximatefunction()
 
