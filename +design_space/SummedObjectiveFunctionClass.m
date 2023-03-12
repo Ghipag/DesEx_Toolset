@@ -3,16 +3,16 @@ classdef SummedObjectiveFunctionClass
     % objective function
     %
     % SummedObjectiveFunctionClass Properties:
-    %    approximatefunction - functionhandle of aprroximation function
-    %    (i.e. the approximation approach)
+    %    approximatefunction - Approximated function of the summed objective function
+    %    collecteddata - colected data matirx of weighted objective summation
     %
     % ObjectiveFunctionClass Methods:
     %    SummedObjectiveFunctionClass - Constructor of SummedObjectiveFunctionClass
+    %    plotgraph - plots a 3d plot of the system parameter value against two specified design variables, the other design variables are
+    %    taken as their first value collected
    properties
         approximatefunction % Approximated function of the summed objective function
         collecteddata %colected data matirx of weighted objective summation
-
-
    end
    methods
        function obj = SummedObjectiveFunctionClass(approximatefunctionin)
@@ -35,16 +35,16 @@ classdef SummedObjectiveFunctionClass
            %    designvariablelistarray : cell array containing all design
            %    variables
            %    xdata : positions of collection points
-           %    designvarchoice : choice to two desing vars to plot against
-           %    designvar1 : string containing the name of the first design
-           %    variable to be plotted against
-           %    designvar2 : string containing the name of the second design
-           %    variable to be plotted against
-           %    bestsolutionposition : array containting the position of
+           %    designvarchoice : choice to two desigm vars to plot against
+           %    objectivelistarray : array of values individual objectives
+           %    optimisationposition : array containing the position of
            %    the best solution in the directions of the two specified
            %    design variables and the objective function
+           %    othervals : values to set remaining design variables
+           %    constraintarray : array of constraint coefficients
+           %    previousdatalist : Array of previous design space data
            % Outputs:
-           % 
+           %    plots of the design space
            %collected data prosessing
             figure
             % calculate the weighted collected data and sum across all
