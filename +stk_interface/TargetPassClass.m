@@ -3,11 +3,16 @@ classdef TargetPassClass
     % TargetPass
     % 
     %TargetPassClass Properties:
-    %    latitude - float containing latitude of ground station
-    %    longitude - float containing longitude of ground station
+    %    windowlength - float containing duration in seconds of access window
+    %    targetID - name of target to be passed
+    %    selectedsubarea - index/name of selected sub area if multi sub area area target
+    %    startTime - start time of the pass
+    %    startTimeFoV - start time of the pass accounting for instrument FoV
+    %    stopTime - stop time of pass
+    %    stopTimeFoV - start time of the pass accounting for instrument FoV
     %
     % TargetPassClass Methods:
-    %    SpacecraftClass - Constructor of SpacecraftClass
+    %    TargetPassClass - Constructor of TargetPassClass
    properties
       windowlength {mustBeNumeric} % float containing duration in seconds of access window
       targetID % name of target to be passed
@@ -22,8 +27,9 @@ classdef TargetPassClass
            %TargetPassClass is the constructor of the
            %TargetPassClass object
            % Inputs:
-           %    name : string containting name of the Spacecraft
-           %    sma : float containing SMA of spacecraft orbit
+           %    duration : duration of the pass
+           %    tarindex : index of the related target
+           %    stime : start of the pass
            % Outputs:
            %    obj : the TargetPassClass object
             if nargin == 3

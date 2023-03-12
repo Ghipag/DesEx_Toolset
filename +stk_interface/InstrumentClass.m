@@ -3,13 +3,17 @@ classdef InstrumentClass
     % Spacecraft
     % 
     % InstrumentClass Properties:
-    %    latitude - float containing latitude of ground station
-    %    longitude - float containing longitude of ground station
-    %    access - object pulled from STK containing inofrmation on ground
-    %    stationn acces times
+    %    name - name of the Instrument
+    %    Type - type of insturment (viewing type)
+    %    azimuth - azimuth of fixed insturment
+    %    elevation - elevation of fixed insturment
+    %    pointtarget - target for pointing instrument
+    %    FOVtype - type of field of view
+    %    FOVangle - angular field of view, single value for conic, [vertical, horizontal] for rectangular
+    %    targetlist - cell array of target objects
     %
     % InstrumentClass Methods:
-    %    SpacecraftClass - Constructor of SpacecraftClass
+    %    InstrumentClass - Constructor of InstrumentClass
    properties
       name {mustBeText} = "undefined" % name of the Instrument
       Type(1,:) char {mustBeMember(Type,{'NadirFixed','Fixed','Targeted','Undefined'})} = 'Undefined' % type of insturment (viewing type)
@@ -29,8 +33,13 @@ classdef InstrumentClass
            %InstrumentClass object
            % Inputs:
            %    name : string containting name of the Instrument
-           %    type : type containing type of insturment (viewing type)
+           %    type : type of insturment (viewing type)
+           %    FOVType : type of field of view (e.g. conical)
            %    FOV : float containing angular feild of view
+           %    azimuth :  float containing aziumth offset of instrument
+           %    elevation :  float containing elevation offset of
+           %    instrument
+           %    pointtartget : type of target pointing
 
            % Outputs:
            %    obj : the InstrumentClass object

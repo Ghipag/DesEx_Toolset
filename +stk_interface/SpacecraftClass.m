@@ -3,13 +3,25 @@ classdef SpacecraftClass
     % Spacecraft
     % 
     % SpacecraftClass Properties:
-    %    latitude - float containing latitude of ground station
-    %    longitude - float containing longitude of ground station
-    %    access - object pulled from STK containing inofrmation on ground
-    %    stationn acces times
+    %    name - name of the Spacecraft
+    %    SMA - float containing SMA of spacecraft orbit
+    %    e - float containing eccentricity of spacecraft orbit
+    %    I - float containing inclanation of spacecraft orbit
+    %    RAAN - float containing RAAN of spacecraft orbit
+    %    AOP - float containing AOP of spacecraft orbit
+    %    TA - float containing TA of spacecraft orbit
+    %    positionseries - vecotr describing posiotn and velocoity of spacecraft along orbit
+    %    groundtrack - geoshape object of lat lon points along ground track
+    %    altitudeseries - vector of altiudes for each positon in position series
+    %    targetlist - cell array of target objects
+    %    Instrumentlist - cell array of insturment objects
+    %    antennalist - cell array of radio antenna objects
+    %    nextcommspass - object containing information about the mext comms pass to be performed
+    %    nexttargetpass - object containing information about the mext comms pass to be performed
     %
     % SpacecraftClass Methods:
     %    SpacecraftClass - Constructor of SpacecraftClass
+    %    Kepl2Cartesain - Convert Keplerian elements to cartesian coordinates
    properties
       name {mustBeText} = "undefined" % name of the Spacecraft
       SMA {mustBeNumeric} % float containing SMA of spacecraft orbit
@@ -55,20 +67,12 @@ classdef SpacecraftClass
             end
        end
        function [X, Y, Z, Vx, Vy, Vz] = Kepl2Cartesain(obj)
-            %Kepl2Cartesain COnvert Keplerian elements to cartesian
+            %Kepl2Cartesain Convert Keplerian elements to cartesian
             %coordinates
             %
-            % Inputs:
-            % 			alt : Altitude						
-            % 			e : Eccentricity											    
-            % 			i : Inclination						
-            % 			w : Argument of perigee	
-            % 			nu :	Satellite position							
-            % 			RAAN : right ascenion of the ascending node						
+            % Inputs:				
             %
             % Outputs:
-            %																
-            %       Sate vector of satellite
             %
 
             mu_earth = 3.986 * 10^5; % Earth Gravitational Constant
