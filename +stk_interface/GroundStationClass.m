@@ -1,12 +1,21 @@
 classdef GroundStationClass
-    % GroundStationClass   Class for storing information about a particular
+    % GroundStationClass Class for storing information about a particular
     % Ground Station
     % 
     % GroundStationClass Properties:
-    %    latitude - float containing latitude of ground station
-    %    longitude - float containing longitude of ground station
-    %    access - object pulled from STK containing inofrmation on ground
-    %    stationn acces times
+    %    name - name of the ground station
+    %    latitude {mustBeNumeric} - float containing latitude of ground station
+    %    longitude {mustBeNumeric} - float containing longitude of ground station
+    %    altitude {mustBeNumeric} - float containing altitude of ground station 
+    %    access - access object
+    %    accessstarttimes - start times of accesses
+    %    accessstarttimesstr - start times of accesses in string
+    %    accessstarttimesnum - start times of accesses in number form
+    %    accessstoptimes - stop times of accesses
+    %    accessstoptimesstr - stop times of accesses in string
+    %    accessstoptimesnum - stop times of accesses in number form
+    %    accesssdurations - durations of accesses
+    %    accesssdurationsstr - durations of accesses in string
     %
     % GroundStationClass Methods:
     %    GroundStationClass - Constructor of GroundStationClass
@@ -18,10 +27,10 @@ classdef GroundStationClass
       access % access object
       accessstarttimes % start times of accesses
       accessstarttimesstr % start times of accesses in string
-      accessstarttimesnum % start times of accesses in number
+      accessstarttimesnum % start times of accesses in number form
       accessstoptimes % stop times of accesses
       accessstoptimesstr % stop times of accesses in string
-      accessstoptimesnum % stop times of accesses in number
+      accessstoptimesnum % stop times of accesses in number form
       accesssdurations % durations of accesses
       accesssdurationsstr % durations of accesses in string
 
