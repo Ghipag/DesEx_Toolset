@@ -1,13 +1,15 @@
 classdef CommsPassClass
-    % CommsPassClass   Class for storing information about a particular
+    % CommsPassClass Class for storing information about a particular
     % CommsPass
     % 
     % CommsPassClass Properties:
-    %    latitude - float containing latitude of ground station
-    %    longitude - float containing longitude of ground station
+    %    windowlength - float containing duration in seconds of access window
+    %    groundstationID - id of groundation to use
+    %    startTime - start time of pass
+    %    stopTime - stop time of pass
     %
     % CommsPassClass Methods:
-    %    SpacecraftClass - Constructor of SpacecraftClass
+    %    CommsPassClass - Constructor of CommsPassClass
    properties
       windowlength {mustBeNumeric} % float containing duration in seconds of access window
       groundstationID % id of groundation to use
@@ -19,8 +21,9 @@ classdef CommsPassClass
            %CommsPassClass is the constructor of the
            %CommsPassClass object
            % Inputs:
-           %    name : string containting name of the Spacecraft
-           %    sma : float containing SMA of spacecraft orbit
+           %    duration : duration of the pass
+           %    gsindex : index of the related ground station
+           %    stime : start time of the pass
            % Outputs:
            %    obj : the CommsPassClass object
             if nargin == 3
