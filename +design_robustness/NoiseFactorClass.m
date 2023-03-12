@@ -28,11 +28,10 @@ classdef NoiseFactorClass
        function obj = NoiseFactorClass(name,mean,cov,address)
            % NoiseFactorClass is the constructor of the NoiseFactorClass object
            % Inputs:
-           %    modelelementname : name of the element of the model from which the design values is generated
+           %    name : name of the element of the model from which the design values is generated
            %    mean : Mean value of the noise factor
            %    CoV : Covariance of the noise factor
-           %    csmaddress : address of the noise factor in the csm model
-           %    collectionvector : array of collected noise factor values
+           %    address : address of the noise factor in the csm model
            % Outputs:
            %    obj : the NoiseFactorClass object
             if nargin == 4
