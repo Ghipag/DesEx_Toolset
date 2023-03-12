@@ -15,6 +15,16 @@ classdef ObjectiveClass
     %
     % ObjectiveFunctionClass Methods:
     %    ObjectiveFunctionClass - Constructor of ObjectiveFunctionClass
+    %    addaddressentry - add a new address entry to the ObjectiveClass object
+    %    updatecollectionmatrix - Inputs new value into the collection matrix
+    %    restructurecollectionmatrix restrucutres the collection matrix
+    %    to make it suitable for generating surfaces functions and plots
+    %    generatesurface generates the approximate surface fitted to the
+    %    system paramter data
+    %    plotgraph plots a 3d plot of the system parameter value against
+    %    two specified design variables, the other design variables are
+    %    taken as their first value collected
+    %    
    properties
         csmaddress % csmaddress - numeric vector representing the objective address in the model tree 
         objfunction % function to be fitted to collection data of objective function
@@ -74,7 +84,7 @@ classdef ObjectiveClass
            %restructurecollectionmatrix restrucutres the collection matrix
            %to make it suitable for generating surfaces functions and plots
            % Inputs:
-           %    nocollectionpoints : number of collection points to be used
+           %    positionrecord : number of collection points to be used
            % Outputs:
            %    obj.structureddata : the resturtured collection matrix
            for i = 1:size(positionrecord,1)
@@ -94,7 +104,7 @@ classdef ObjectiveClass
            %    coefficients
             obj.approximatesurface = lsqcurvefit(obj.objfunction,startingcoeffs,xinputdata,obj.structureddata);       
        end
-       function obj = plotgraph(obj,designvariablelistarray,xdata,designvarchoice,designvar1,designvar2,bestsolutionposition)
+       function obj = plotgraph(obj,designvariablelistarray,xdata,designvarchoice,bestsolutionposition)
            %plotgraph plots a 3d plot of the system parameter value against
            %two specified design variables, the other design variables are
            %taken as their first value collected
@@ -103,15 +113,11 @@ classdef ObjectiveClass
            %    variables
            %    xdata : positions of collection points
            %    designvarchoice : choice to two desing vars to plot against
-           %    designvar1 : string containing the name of the first design
-           %    variable to be plotted against
-           %    designvar2 : string containing the name of the second design
-           %    variable to be plotted against
            %    bestsolutionposition : array containting the position of
            %    the best solution in the directions of the two specified
            %    design variables and the objective function
            % Outputs:
-           %        
+           %    plots of the design space
             %generate points at which to plot approximation
             N_plot=100*ones(1,size(designvariablelistarray,2));%number of points to calculate at
             x_plot=linspace(designvariablelistarray{designvarchoice(1)}.Min,designvariablelistarray{designvarchoice(1)}.Max,N_plot(1))';
@@ -126,9 +132,8 @@ classdef ObjectiveClass
             s.EdgeColor = 'none';
             colorbar 
             hold on
+
             %add collected data
-%             plot3(xdata(1,:),xdata(2,:),obj.structureddata,'o')
-%             hold on  
             plot3(bestsolutionposition(1),bestsolutionposition(2), bestsolutionposition(3) ,'r*')
             text(bestsolutionposition(1),bestsolutionposition(2),bestsolutionposition(3) ,"Best Solution") 
             xlabel(designvariablelistarray{designvarchoice(1)}.modelelementname) 
