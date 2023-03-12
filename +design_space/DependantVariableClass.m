@@ -17,7 +17,12 @@ classdef DependantVariableClass
     %
     % DependantVariableClass Methods:
     %    DependantVariableClass - Constructor of DependantVariableClass
+    %    addaddressentry - add a new address entry to the DependantVariableClass object
+    %    updatecollectionmatrix - Inputs new value into the collection
+    %    matrix
+    %    generatesurface - generates the approximate surface fitted to the system paramter data
     %    restructurecollectionmatrix - restrucutres the collection matrix to make it suitable for generating surfaces functions and plots
+    %    plotgraph - plots a 3d plot of the system parameter value against two specified design variables, the other design variables are taken as their first value collected
     %    
    properties
         csmaddress % csmaddress - numeric vector representing the dependant variables address in the model tree

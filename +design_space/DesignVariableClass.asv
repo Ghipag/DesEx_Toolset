@@ -15,7 +15,6 @@ classdef DesignVariableClass
     %
     % DesignVariableClass Methods:
     %    DesignVariableClass - Constructor of DesignVariableClass
-    %    addaddressentry - add a new address entry to the DesignVariableClass object
 
 
    properties
